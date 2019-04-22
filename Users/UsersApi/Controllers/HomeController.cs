@@ -9,21 +9,10 @@ namespace UsersApi.Controllers
 {
     public class HomeController : Controller
     {
-        readonly IUsersDomain _usersDomain;
-
-        public HomeController()
-        {
-            bool isRegitered = false;
-        }
-
-        public HomeController(IUsersDomain usersDomain)
-        {
-            _usersDomain = usersDomain;
-        }
 
         public ActionResult Index()
         {
-            ViewBag.Title = _usersDomain.SayHi("Home Page");
+            ViewBag.Title = "Home Page";
 
             return View();
         }

@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersWeb.Tests", "UsersWeb.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{E311E6D9-39CD-4698-8DAA-23D394446DC6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FE105C6D-8A79-4433-887E-0B6BA555B45B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{66586092-D4A7-43A3-AB4D-56957AD98B67} = {FE105C6D-8A79-4433-887E-0B6BA555B45B}
+		{F030C5A1-DF10-4AD1-8D31-6916FBD85A0B} = {FE105C6D-8A79-4433-887E-0B6BA555B45B}
+		{B9EE5C32-8864-447D-AE01-C7F18ED9D8D5} = {FE105C6D-8A79-4433-887E-0B6BA555B45B}
+		{0C820514-B751-469C-8C82-9B2D43A54973} = {FE105C6D-8A79-4433-887E-0B6BA555B45B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5EC7B60A-35EA-44F8-A1C7-669E841B54C7}

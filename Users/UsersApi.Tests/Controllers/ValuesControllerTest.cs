@@ -1,11 +1,7 @@
-﻿using System;
+﻿using Domain;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Web.Http;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using UsersApi;
 using UsersApi.Controllers;
 
 namespace UsersApi.Tests.Controllers
@@ -13,14 +9,13 @@ namespace UsersApi.Tests.Controllers
     [TestClass]
     public class ValuesControllerTest
     {
+        private ValuesController _controller = new ValuesController(new UsersDomain());
+
         [TestMethod]
         public void Get()
         {
-            // Disponer
-            ValuesController controller = new ValuesController();
-
             // Actuar
-            IEnumerable<string> result = controller.Get();
+            IEnumerable<string> result = _controller.Get();
 
             // Declarar
             Assert.IsNotNull(result);
@@ -32,11 +27,8 @@ namespace UsersApi.Tests.Controllers
         [TestMethod]
         public void GetById()
         {
-            // Disponer
-            ValuesController controller = new ValuesController();
-
             // Actuar
-            string result = controller.Get(5);
+            string result = _controller.Get(5);
 
             // Declarar
             Assert.AreEqual("value", result);
@@ -45,11 +37,8 @@ namespace UsersApi.Tests.Controllers
         [TestMethod]
         public void Post()
         {
-            // Disponer
-            ValuesController controller = new ValuesController();
-
             // Actuar
-            controller.Post("value");
+            _controller.Post("value");
 
             // Declarar
         }
@@ -57,11 +46,8 @@ namespace UsersApi.Tests.Controllers
         [TestMethod]
         public void Put()
         {
-            // Disponer
-            ValuesController controller = new ValuesController();
-
             // Actuar
-            controller.Put(5, "value");
+            _controller.Put(5, "value");
 
             // Declarar
         }
@@ -69,11 +55,8 @@ namespace UsersApi.Tests.Controllers
         [TestMethod]
         public void Delete()
         {
-            // Disponer
-            ValuesController controller = new ValuesController();
-
             // Actuar
-            controller.Delete(5);
+            _controller.Delete(5);
 
             // Declarar
         }

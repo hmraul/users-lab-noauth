@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Class1
+    public class UsersDomain : IUsersDomain
     {
+        public string SayHi(string name) => string.Format("Hi {0}", name);
     }
 }

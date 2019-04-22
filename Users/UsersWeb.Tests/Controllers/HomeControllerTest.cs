@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
+﻿using Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using UsersWeb;
+using System.Web.Mvc;
 using UsersWeb.Controllers;
 
 namespace UsersWeb.Tests.Controllers
@@ -12,14 +8,13 @@ namespace UsersWeb.Tests.Controllers
     [TestClass]
     public class HomeControllerTest
     {
+        HomeController _controller = new HomeController(new UsersDomain());
+
         [TestMethod]
         public void Index()
         {
-            // Arrange
-            HomeController controller = new HomeController();
-
             // Act
-            ViewResult result = controller.Index() as ViewResult;
+            ViewResult result = _controller.Index() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
@@ -28,11 +23,8 @@ namespace UsersWeb.Tests.Controllers
         [TestMethod]
         public void About()
         {
-            // Arrange
-            HomeController controller = new HomeController();
-
             // Act
-            ViewResult result = controller.About() as ViewResult;
+            ViewResult result = _controller.About() as ViewResult;
 
             // Assert
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);
@@ -41,11 +33,8 @@ namespace UsersWeb.Tests.Controllers
         [TestMethod]
         public void Contact()
         {
-            // Arrange
-            HomeController controller = new HomeController();
-
             // Act
-            ViewResult result = controller.Contact() as ViewResult;
+            ViewResult result = _controller.Contact() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);

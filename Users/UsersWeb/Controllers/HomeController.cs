@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,13 @@ namespace UsersWeb.Controllers
 {
     public class HomeController : Controller
     {
+        readonly IUsersDomain _usersDomain;
+
+        public HomeController(IUsersDomain usersDomain)
+        {
+            _usersDomain = usersDomain;
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -15,7 +23,7 @@ namespace UsersWeb.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = _usersDomain.SayHi("Your application description page.");
 
             return View();
         }
